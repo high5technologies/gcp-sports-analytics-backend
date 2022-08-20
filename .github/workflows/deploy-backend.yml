@@ -7,7 +7,7 @@ name: 'Backend GCP Cloud Run Deployment'
 on:
   push:
     paths:
-    - 'backend/**'                     #config-here
+    - 'api-backend/**'                     #config-here
     branches:
     - main
     - dev
