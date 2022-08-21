@@ -32,11 +32,11 @@ def dataset-test():
         #print(doc.id)
         #print(doc.to_dict())
         data.append(doc.to_dict())
-    headers = {
-            'Access-Control-Allow-Origin': '*'
-        }
-    return ({"data":data}, 200, headers)
-
+    #headers = {
+    #        'Access-Control-Allow-Origin': '*'
+    #    }
+    #return ({"data":data}, 200, headers)
+    return({"data":data})
 
 
 port = int(os.environ.get('PORT', 8080))
