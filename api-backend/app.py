@@ -17,7 +17,7 @@ def books_table_update():
 
 @app.route('/test2', methods=["GET"])
 def stanford_page():
-    return "This is the test2 backend"
+    return "This is the test2 backend."
 
 port = int(os.environ.get('PORT', 8080))
 if __name__ == '__main__':
