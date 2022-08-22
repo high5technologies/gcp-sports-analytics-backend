@@ -21,7 +21,7 @@ def test2():
     return "This is the test2 backend."
 
 @app.route('/dataset-test', methods=["GET"])
-def dataset-test():
+def dataset_test():
     #fs = firestore.Client()
     #league = 'nba'
     #bq_table = 'api_game_team_odds_ml'
