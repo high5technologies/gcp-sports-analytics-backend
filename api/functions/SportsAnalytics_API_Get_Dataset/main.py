@@ -9,8 +9,6 @@ import traceback
 import urllib.request
 
 def api_return_data(request):
-    
-    
 
     # Config
     url = "http://metadata.google.internal/computeMetadata/v1/project/project-id"
