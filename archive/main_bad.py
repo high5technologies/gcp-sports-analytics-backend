@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/test1", methods=["GET"])
 def books_table_update():
     
-    return "This is the test1 backend"
+    return "This is the test1 backend."
 
 @app.route('/test2', methods=["GET"])
 def stanford_page():
