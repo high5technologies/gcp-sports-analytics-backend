@@ -83,7 +83,8 @@ jobs:
     #  run: docker run $IMAGE_NAME sh -c "go test -v"
 
     - name: Push Docker image
-      run: docker push $IMAGE_NAME
+    #  run: docker push $IMAGE_NAME
+      run: docker push ${{ env.IMAGE_NAME }}
 
     - name: Deploy Docker image
     #  run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed --no-allow-unauthenticated
