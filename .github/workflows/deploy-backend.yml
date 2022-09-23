@@ -20,8 +20,8 @@ on:
 env:
   #sport: test
   SERVICE: api-backend                      #config-here
-  #IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/api-backend-image
-  IMAGE_NAME: gcr.io/sports-analytics-dev/api-backend-image
+  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/api-backend-image
+  #IMAGE_NAME: gcr.io/sports-analytics-dev/api-backend-image
 
 ##################################################################################################
 # No changes below here
@@ -90,5 +90,4 @@ jobs:
     - name: Deploy Docker image
     #  run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed --no-allow-unauthenticated
     #  run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image ${{ env.IMAGE_NAME }} --region us-central1 --platform managed --no-allow-unauthenticated
-      run: gcloud run deploy ${{ env.SERVICE }} sports-analytics-dev --image ${{ env.IMAGE_NAME }} --region us-central1 --platform managed --no-allow-unauthenticated
-
+      run: gcloud run deploy ${{ env.SERVICE }} --image ${{ env.IMAGE_NAME }} --region us-central1 --platform managed --no-allow-unauthenticate
