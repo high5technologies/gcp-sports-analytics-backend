@@ -21,6 +21,7 @@ env:
   #sport: test
   SERVICE: api-backend                      #config-here
   IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/api-backend-image
+  #IMAGE_NAME: gcr.io/sports-analytics-dev/api-backend-image
 
 ##################################################################################################
 # No changes below here
