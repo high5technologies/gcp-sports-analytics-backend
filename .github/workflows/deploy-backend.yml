@@ -21,6 +21,7 @@ env:
   #sport: test
   SERVICE: api-backend                      #config-here
   IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/api-backend-image
+  #IMAGE_NAME: gcr.io/sports-analytics-dev/api-backend-image
 
 ##################################################################################################
 # No changes below here
@@ -76,14 +77,17 @@ jobs:
     #  uses: actions/checkout@v2
 
     - name: Build Docker image
-      run: docker build . -t $IMAGE_NAME
+    #  run: docker build . -t $IMAGE_NAME
+      run: docker build . -t ${{ env.IMAGE_NAME }}
 
     #- name: Test Docker image
     #  run: docker run $IMAGE_NAME sh -c "go test -v"
 
     - name: Push Docker image
-      run: docker push $IMAGE_NAME
+    #  run: docker push $IMAGE_NAME
+      run: docker push ${{ env.IMAGE_NAME }}
 
     - name: Deploy Docker image
-      run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed --no-allow-unauthenticated
+    #  run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed --no-allow-unauthenticated
+      run: gcloud run deploy ${{ env.SERVICE }} ${{ secrets.GCP_PROJECT }} --image ${{ env.IMAGE_NAME }} --region us-central1 --platform managed --no-allow-unauthenticated
 
