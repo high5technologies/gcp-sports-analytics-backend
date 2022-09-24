@@ -23,7 +23,7 @@ resource "google_project_service" "project_apikeys" {
   disable_on_destroy = false
 }
 
-resource "google_project_service" "project_apikeys" {
+resource "google_project_service" "project_iam" {
   project = var.gcp_project_id
   service = "iam.googleapis.com"
   disable_on_destroy = false
