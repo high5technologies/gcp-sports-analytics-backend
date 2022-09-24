@@ -30,7 +30,7 @@ resource "google_apikeys_key" "api_key_sports_analytics_app" {
     #  allowed_referrers = [".*"]
     #}
   }
-  depends_on = [google_project_service.project_apikeys]
+  depends_on = [google_project_service.project_apikeys, google_project_service.project_iam]
 }
 
 resource "google_apikeys_key" "api_key_sports_analytics_test" {
@@ -43,7 +43,7 @@ resource "google_apikeys_key" "api_key_sports_analytics_test" {
       #methods = ["GET*"]
     }
   }
-  depends_on = [google_project_service.project_apikeys]
+  depends_on = [google_project_service.project_apikeys, google_project_service.project_iam]
 }
 
 data "template_file" "openapi_file" {
