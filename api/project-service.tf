@@ -23,6 +23,12 @@ resource "google_project_service" "project_apikeys" {
   disable_on_destroy = false
 }
 
+resource "google_project_service" "project_iam" {
+  project = var.gcp_project_id
+  service = "iam.googleapis.com"
+  disable_on_destroy = false
+}
+
 #resource "google_project_service" "project_sports_analytics_api" {
 #  project = var.gcp_project_id
 #  service = google_api_gateway_api.api_sports_analytics.managed_service
