@@ -16,8 +16,8 @@ resource "google_api_gateway_api" "api_sports_analytics" {
 }
 
 resource "google_apikeys_key" "api_key_sports_analytics_app" {
-  name         = "sports-analytics-app"
-  display_name = "Sports Analytics - App"
+  name         = "sports-analytics-api-app"
+  display_name = "Sports Analytics API - App"
   project      = var.gcp_project_id
 
   restrictions {
@@ -34,8 +34,8 @@ resource "google_apikeys_key" "api_key_sports_analytics_app" {
 }
 
 resource "google_apikeys_key" "api_key_sports_analytics_test" {
-  name         = "sports-analytics-test"
-  display_name = "Sports Analytics - Test"
+  name         = "sports-analytics-api-test"
+  display_name = "Sports Analytics API - Test"
   project      = var.gcp_project_id
   restrictions {
     api_targets {
