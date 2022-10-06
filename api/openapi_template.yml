@@ -17,7 +17,8 @@ produces:
 #x-google-backend:
 #  address: api-backend
 x-google-backend:
-  address: https://api-backend-gkj4hbakoa-uc.a.run.app
+  #address: https://api-backend-gkj4hbakoa-uc.a.run.app
+  address: ${BACKEND_ADDRESS}
   path_translation: APPEND_PATH_TO_ADDRESS
 paths:
   /test1:
